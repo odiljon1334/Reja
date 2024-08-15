@@ -1,0 +1,17 @@
+<svg width="24.986328" height="21.608398" viewBox="0 0 24.9863 21.6084" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs>
+		<clipPath id="clip2_6936">
+			<rect id="Icons-twitter" width="14.575342" height="12.604972" transform="translate(5.072754 4.910645) rotate(0.687863)" fill="white" fill-opacity="0"/>
+		</clipPath>
+	</defs>
+	<ellipse id="Ellipse 9" cx="12.493164" cy="10.804199" rx="12.493151" ry="10.804261" fill="#FFB400" fill-opacity="1.000000"/>
+	<rect id="Icons-twitter" width="15.000147" height="11.999991" transform="translate(5.072754 4.910645) rotate(0.687863)" fill="#FFFFFF" fill-opacity="0"/>
+	<rect id="Icons-twitter" width="14.575342" height="12.604972" transform="translate(5.072754 4.910645) rotate(0.687863)" fill="#FFFFFF" fill-opacity="0"/>
+	<rect id="Icons-twitter" width="14.575342" height="12.604972" transform="translate(5.072754 4.910645) rotate(0.687863)" fill="#FFFFFF" fill-opacity="0"/>
+	<g clip-path="url(#clip2_6936)">
+		<path id="Vector" d="M18.49 8.04C18.02 8.21 17.53 8.32 17.03 8.37C17.56 8.1 17.96 7.67 18.16 7.16C17.66 7.41 17.11 7.59 16.54 7.68C16.16 7.32 15.66 7.08 15.11 6.99C14.56 6.91 13.99 6.98 13.49 7.2C13 7.43 12.6 7.78 12.36 8.22C12.13 8.66 12.07 9.16 12.19 9.63C11.18 9.57 10.19 9.33 9.3 8.93C8.4 8.52 7.61 7.96 6.98 7.27C6.75 7.6 6.63 7.98 6.62 8.37C6.62 9.13 7.06 9.81 7.73 10.21C7.33 10.2 6.94 10.1 6.59 9.92L6.59 9.95C6.58 10.46 6.78 10.95 7.14 11.35C7.51 11.75 8.02 12.02 8.6 12.13C8.22 12.21 7.83 12.22 7.45 12.15C7.61 12.59 7.92 12.98 8.34 13.26C8.76 13.53 9.27 13.69 9.8 13.71C9.27 14.06 8.67 14.32 8.02 14.46C7.37 14.61 6.7 14.65 6.03 14.57C7.19 15.23 8.53 15.59 9.91 15.61C14.58 15.66 17.18 12.35 17.21 9.44C17.22 9.35 17.21 9.25 17.21 9.16C17.71 8.85 18.14 8.47 18.49 8.04L18.49 8.04Z" fill="#2B2B2B" fill-opacity="1.000000" fill-rule="nonzero"/>
+	</g>
+</svg>
