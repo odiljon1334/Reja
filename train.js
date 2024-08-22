@@ -1,3 +1,5 @@
+const { count } = require("mongodb/lib/operations/cursor_ops");
+
 console.log('Jack Ma maslahatlari');
 const list = [
     "Yahshi talaba bo'ling", // 0-20
@@ -79,3 +81,16 @@ function countLetter(letter, setLetter) {
 // Call
 const result = countLetter('e', 'engineer');
 console.log('result:', result);
+
+
+function countDigits(isNumber) {
+    let count = 0;
+    for(let i = 0; i < isNumber.length; i++) {
+        if(isNumber[i] >= '0' && isNumber[i] <= '9') {
+            count++;
+     }
+
+    }
+    return count;   
+}
+console.log(countDigits("ad2a54y79wet0sfgb9"));
