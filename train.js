@@ -68,29 +68,30 @@ run();
 
 // A-TASK
 // Define
-function countLetter(letter, setLetter) {
-    let count = 0;
+// function countLetter(letter, setLetter) {
+//     let count = 0;
 
-    for(let i = 0; i < setLetter.length; i++) {
-        if(setLetter[i] === letter) {
-            count++;
-        }
-    }
+//     for(let i = 0; i < setLetter.length; i++) {
+//         if(setLetter[i] === letter) {
+//             count++;
+//         }
+//     }
+//     return count;
+// }
+// // Call
+// const result = countLetter('e', 'engineer');
+// console.log('result:', result);
+
+
+// B-TASK
+//Define
+function countDigit(setNumber) {
+    let count = 0;
+    let getNumber = setNumber.split('')
+    .filter(ele => !isNaN(ele) && ele !== ' ');
+    count = getNumber.length;
     return count;
 }
 // Call
-const result = countLetter('e', 'engineer');
+const result = countDigit("ad2a54y79wet0sfgb9");
 console.log('result:', result);
-
-
-function countDigits(isNumber) {
-    let count = 0;
-    for(let i = 0; i < isNumber.length; i++) {
-        if(isNumber[i] >= '0' && isNumber[i] <= '9') {
-            count++;
-     }
-
-    }
-    return count;   
-}
-console.log(countDigits("ad2a54y79wet0sfgb9"));
