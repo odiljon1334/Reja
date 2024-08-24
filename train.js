@@ -85,13 +85,24 @@ run();
 
 // B-TASK
 //Define
-function countDigit(setNumber) {
-    let count = 0;
-    let getNumber = setNumber.split('')
-    .filter(ele => !isNaN(ele) && ele !== ' ');
-    count = getNumber.length;
-    return count;
+// function countDigit(setNumber) {
+//     let count = 0;
+//     let getNumber = setNumber.split('')
+//     .filter(ele => !isNaN(ele) && ele !== ' ');
+//     count = getNumber.length;
+//     return count;
+// }
+// // Call
+// const result = countDigit("ad2a54y79wet0sfgb9");
+// console.log('result:', result);
+
+
+// C-TASK
+//Define
+function checkContent(a, b){
+    
+    return a.split('').sort().join('') === b.split('').sort().join('');
 }
 // Call
-const result = countDigit("ad2a54y79wet0sfgb9");
+const result = checkContent('mitgroup', 'gmtiprou');
 console.log('result:', result);
