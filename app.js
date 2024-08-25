@@ -32,7 +32,6 @@ app.post("/create-item", (req, res) => {
     console.log("User entered /create-item");
     const new_reja = req.body.reja;
     db.collection("plans").insertOne({reja: new_reja}, (err, data) => {
-        console.log(data.ops);
         res.json(data.ops[0]);
     }) 
 });
@@ -48,6 +47,26 @@ app.post("/delete-item", (req, res) => {
      function(err, data) {
         res.json({state: "succes" });
     });
+})
+
+app.post("/edit-item", (req, res) => {
+    const data = req.body;
+    console.log(data);
+    db.collection("plans")
+    .findOneAndUpdate(
+        {_id: new mongodb.ObjectId(data.id)},
+         {$set: {reje: data.new_input}}, 
+    function (err, data) {
+        res.json({state: "succesa"});
+    });
+});
+
+app.post("/delete-all", (req, res) => {
+    if(req.body.delete_all) {
+        db.collection("plans").deleteMany(function() {
+            res.json({state: "Hamma rejalar o'chirildi!"});
+    });
+}
 })
 
 app.get("/", function(req, res) {
