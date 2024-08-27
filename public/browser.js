@@ -3,7 +3,7 @@ console.log("FrontEnd JS ishga tushdi!");
 let createField = document.getElementById("create-field");
 
 function itemTemplate(item) {
-    return` <li class="list-group-item list-group-item-info d-flex align-items-center justify-content-between">
+    return` <li class="list-group-item mt-1 list-group-item-info d-flex align-items-center justify-content-between">
             <span class="item-text">${item.reja}</span>
         <div>
             <button data-id="${item._id}" class="edit-me btn btn-secondary btn-sm mr-1">
@@ -50,7 +50,8 @@ document.addEventListener('click', function(e) {
     }
     // edit oper
     if(e.target.classList.contains("edit-me")) {
-        let userInput = prompt("O'zgartirish kiriting!",
+        let userInput = prompt(
+            "O'zgartirish kiriting!",
             e.target
             .parentElement
             .parentElement
@@ -59,14 +60,18 @@ document.addEventListener('click', function(e) {
         );
         if(userInput) {
             axios.post("/edit-item", {
-                id: e.target
-                .getAttribute("data-id"),
-                new_input: userInput,
+                id: e.target.getAttribute(
+                    "data-id"
+                ),
+                newInput: userInput,
                 })
                 .then((response) => {
-                    e.target.parentElement.parentElement.querySelector(
-                        ".item-text"
-                    ).innerHTML = userInput;
+                    console.log(response.data); // Javobni ko'rsatish
+                    if (response.data.state === "success") {
+                        e.target.parentElement.parentElement.querySelector(".item-text").innerHTML = userInput;
+                    } else {
+                        console.log("Yangilanish muvaffaqiyatsiz!", response.data.message);
+                    }
                 })
                 .catch((err) => {
                     console.log("Iltimos qaytadan harakat qiling!");

@@ -1,14 +1,14 @@
-const { count } = require("mongodb/lib/operations/cursor_ops");
+const moment = require("moment");
 
-console.log('Jack Ma maslahatlari');
-const list = [
-    "Yahshi talaba bo'ling", // 0-20
-    "To'g'ri boshliq tanlang va ko'proq xato qiling!", // 20-30
-    "O'zingizga ishlashni boshlang!", // 30-40
-    "Siz kuchli bo'lgan narsalarni qiling!", // 40-50
-    "Yoshlarga investitsya qiling!", // 50-60
-    "Endi dam oling foydasi yo'q endi...", // 60
-];
+// console.log('Jack Ma maslahatlari');
+// const list = [
+//     "Yahshi talaba bo'ling", // 0-20
+//     "To'g'ri boshliq tanlang va ko'proq xato qiling!", // 20-30
+//     "O'zingizga ishlashni boshlang!", // 30-40
+//     "Siz kuchli bo'lgan narsalarni qiling!", // 40-50
+//     "Yoshlarga investitsya qiling!", // 50-60
+//     "Endi dam oling foydasi yo'q endi...", // 60
+// ];
 
 // function maslahatBering(a, callback) {
 //     if(typeof a !== 'number') callback("Insert a number", null);
@@ -58,13 +58,13 @@ async function maslahatBering(a) {
 // console.log('Passed here 1');
 
 //call async / await
-async function run() {
-    let javob = await maslahatBering(65);
-    console.log('Javob:', javob);
-    javob = await maslahatBering(31);
-    console.log("Javob:", javob);
-}
-run();
+// async function run() {
+//     let javob = await maslahatBering(65);
+//     console.log('Javob:', javob);
+//     javob = await maslahatBering(31);
+//     console.log("Javob:", javob);
+// }
+// run();
 
 // A-TASK
 // Define
@@ -99,10 +99,51 @@ run();
 
 // C-TASK
 //Define
-function checkContent(a, b){
+// function checkContent(a, b){
     
-    return a.split('').sort().join('') === b.split('').sort().join('');
+//     return a.split('').sort().join('') === b.split('').sort().join('');
+// }
+// // Call
+// const result = checkContent('mitgroup', 'gmtiprou');
+// console.log('result:', result);
+
+// D-TASK
+class Shop {
+    constructor(non, lagmon, cola) {
+        this.mahsulot = {
+            non: non,
+            lagmon: lagmon,
+            cola: cola
+        }
+    }
+    // Time method
+    tellMeTime() {
+       return moment().format("HH:mm");
+    }
+    // qoldiqlarni ko'rish methodi
+    qoldiq() {
+        console.log(`Hozir ${this.tellMeTime()} da ${this.mahsulot.non}ta non, ${this.mahsulot.lagmon}ta lagmon, ${this.mahsulot.cola}ta cola mavjud!`);
+    }
+    // sotish methodi
+    sotish(product, amount) {
+        if(this.mahsulot[product] >= amount){
+            this.mahsulot[product] -= amount;
+            console.log(`${this.tellMeTime()}da ${amount}ta ${product} sotildi!`);
+        } else {
+            console.log(`Kechirasiz ${product}imiz hozir sotuvda mavjud emas!`);
+        }
+    }
+    // Mahsulot qo'shish methodi
+    qoshish(product, amount) {
+        this.mahsulot[product] += amount;
+        console.log(`${this.tellMeTime()} da, ${amount}ta ${product} qo'shildi!`);
+    }
 }
-// Call
-const result = checkContent('mitgroup', 'gmtiprou');
-console.log('result:', result);
+// Call 
+const shop = new Shop(4, 5, 2);
+shop.qoldiq();
+shop.sotish('non', 2);
+shop.sotish('non', 2);
+shop.sotish('non', 2);
+shop.qoshish('non', 2);
+shop.qoldiq();

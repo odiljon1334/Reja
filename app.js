@@ -44,21 +44,26 @@ app.post("/delete-item", (req, res) => {
     db.collection("plans")
     .deleteOne(
         {_id: new mongodb.ObjectId(id)},
-     function(err, data) {
+    function(err, data) {
         res.json({state: "succes" });
     });
 })
 
 app.post("/edit-item", (req, res) => {
-    const data = req.body;
-    console.log(data);
-    db.collection("plans")
-    .findOneAndUpdate(
-        {_id: new mongodb.ObjectId(data.id)},
-         {$set: {reje: data.new_input}}, 
-    function (err, data) {
-        res.json({state: "succesa"});
-    });
+    const data = req.body.newInput;
+    const id = req.body.id;
+    db.collection("plans").findOneAndUpdate(
+        { _id: new mongodb.ObjectId(id) }, 
+        { $set: { reja: data } },
+        (err, result) => {
+            if (err) {
+                console.log("Xatolik yuz berdi:", err); // Xatoni ko'rsatish
+                return res.json({ state: "error", message: "Yangilashda xatolik yuz berdi" });
+            }
+            console.log(result.value);
+            res.json({ state: "success"});
+        }
+    );
 });
 
 app.post("/delete-all", (req, res) => {
