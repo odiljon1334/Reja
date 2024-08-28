@@ -17,9 +17,9 @@ fs.readFile("database/user.json", "utf-8", (err, data) => {
 })
 
 // 1: Kirish code
-app.use(express.static("public"));
-app.use(express.json());
-app.use(express.urlencoded({extended: true}));
+app.use(express.static("public")); // MiddleWare Design Pattern => public
+app.use(express.json()); // Rest API
+app.use(express.urlencoded({extended: true})); // Traditional API
 
 // 2: Session code
 
