@@ -108,42 +108,51 @@ async function maslahatBering(a) {
 // console.log('result:', result);
 
 // D-TASK
-class Shop {
-    constructor(non, lagmon, cola) {
-        this.mahsulot = {
-            non: non,
-            lagmon: lagmon,
-            cola: cola
-        }
-    }
-    // Time method
-    tellMeTime() {
-       return moment().format("HH:mm");
-    }
-    // qoldiqlarni ko'rish methodi
-    qoldiq() {
-        console.log(`Hozir ${this.tellMeTime()} da ${this.mahsulot.non}ta non, ${this.mahsulot.lagmon}ta lagmon, ${this.mahsulot.cola}ta cola mavjud!`);
-    }
-    // sotish methodi
-    sotish(product, amount) {
-        if(this.mahsulot[product] >= amount){
-            this.mahsulot[product] -= amount;
-            console.log(`${this.tellMeTime()}da ${amount}ta ${product} sotildi!`);
-        } else {
-            console.log(`Kechirasiz ${product}imiz hozir sotuvda mavjud emas!`);
-        }
-    }
-    // Mahsulot qo'shish methodi
-    qoshish(product, amount) {
-        this.mahsulot[product] += amount;
-        console.log(`${this.tellMeTime()} da, ${amount}ta ${product} qo'shildi!`);
-    }
+// class Shop {
+//     constructor(non, lagmon, cola) {
+//         this.mahsulot = {
+//             non: non,
+//             lagmon: lagmon,
+//             cola: cola
+//         }
+//     }
+//     // Time method
+//     tellMeTime() {
+//        return moment().format("HH:mm");
+//     }
+//     // qoldiqlarni ko'rish methodi
+//     qoldiq() {
+//         console.log(`Hozir ${this.tellMeTime()} da ${this.mahsulot.non}ta non, ${this.mahsulot.lagmon}ta lagmon, ${this.mahsulot.cola}ta cola mavjud!`);
+//     }
+//     // sotish methodi
+//     sotish(product, amount) {
+//         if(this.mahsulot[product] >= amount){
+//             this.mahsulot[product] -= amount;
+//             console.log(`${this.tellMeTime()}da ${amount}ta ${product} sotildi!`);
+//         } else {
+//             console.log(`Kechirasiz ${product}imiz hozir sotuvda mavjud emas!`);
+//         }
+//     }
+//     // Mahsulot qo'shish methodi
+//     qoshish(product, amount) {
+//         this.mahsulot[product] += amount;
+//         console.log(`${this.tellMeTime()} da, ${amount}ta ${product} qo'shildi!`);
+//     }
+// }
+// // Call 
+// const shop = new Shop(4, 5, 2);
+// shop.qoldiq();
+// shop.sotish('non', 2);
+// shop.sotish('non', 2);
+// shop.sotish('non', 2);
+// shop.qoshish('non', 2);
+// shop.qoldiq();
+
+
+// E-TASK: 
+function getReverse(isString) {
+    let str = isString.split("").reverse().join('');
+    return str;
 }
-// Call 
-const shop = new Shop(4, 5, 2);
-shop.qoldiq();
-shop.sotish('non', 2);
-shop.sotish('non', 2);
-shop.sotish('non', 2);
-shop.qoshish('non', 2);
-shop.qoldiq();
+const result = getReverse("hello");
+console.log('E-TASK:', result);
